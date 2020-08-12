@@ -29,6 +29,8 @@ aside {
 main {
   display: flex;
   width: 100%;
+  flex-direction: column;
+  /* justify-content: space-between; */
   /* flex: 1; */
 }
 
@@ -76,8 +78,10 @@ h3 {
 .person {
   display: flex;
   justify-content: space-between;
-  font-size: 20px;
-  padding: 10px;
-  margin-bottom: 15px;
+  font-size: 16px;
+  padding-top: 10px;
+  margin-left: 20px;
+  width: 100%;
+
 }
 
