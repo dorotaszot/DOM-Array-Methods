@@ -15,7 +15,7 @@ addRandomUser();
 async function addRandomUser() {
   const res = await fetch('https://randomuser.me/api');
   const data = await res.json();
-  console.log(data);
+  // console.log(data);
   const user = data.results[0];
   const newUser = {
     name: `${user.name.first} ${user.name.last}`,
@@ -23,6 +23,15 @@ async function addRandomUser() {
   }
   addData(newUser);
 }
+
+// Double the money
+function doubleMoney() {
+  data = data.map(user => {
+    return { ...user, money: user.money * 2 }
+  });
+
+  updateDOM();
+};
 
 // Add new object to data array
 function addData(obj) {
@@ -49,5 +58,7 @@ function formatMoney(number) {
   return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67
 }
 
-// Even listeners
+// Event listeners
 addUserBtn.addEventListener('click', addRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
+
